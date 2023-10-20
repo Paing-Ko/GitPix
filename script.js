@@ -132,6 +132,9 @@ function displayImages(username) {
     const imageElement = document.getElementById(img.id);
     imageElement.style.display = "block";
     imageElement.src = img.url;
+    if (img.id === "contribution-graph") {
+      document.getElementById("chart-label").style.display = "block";
+    }
   });
 }
 
@@ -201,7 +204,6 @@ function checkEnter(event) {
 closeBtn.onclick = function () {
   modal.style.display = "none";
 };
-
 
 // logo reload
 document.getElementById("logo").addEventListener("click", function () {

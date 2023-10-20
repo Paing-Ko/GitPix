@@ -16,6 +16,7 @@ body {
     /* Turn body into a flex container */
     flex-direction: column;
     /* Stack children vertically */
+    overflow-x: hidden;
 }
 
 .content-wrapper {
@@ -32,7 +33,7 @@ header {
     display: block;
     position: relative;
     width: 100%;
-    padding: 20px;
+    padding: 15px;
     /* Provide some spacing */
 }
 
@@ -43,9 +44,14 @@ header {
     /* Vertically center items */
     justify-content: center;
     /* Horizontally center items */
-    gap: 10px;
+    gap: 5px;
     /* Spacing between logo and title */
 }
+
+.heading h1 {
+    margin-right: 20px; /* Adjust value as needed */
+}
+
 
 .logo {
     position: relative;
@@ -319,7 +325,6 @@ header {
 }
 
 
-
 #top-langs,
 #user-stats,
 #streak-stats,
@@ -441,7 +446,7 @@ footer {
 
 
 /* For smaller screens, adjust the heading font size and logo size */
-@media (max-width: 600px) {
+@media screen and (max-width: 600px) {
     .heading h1 {
         font-size: 18px;
     }
@@ -459,6 +464,7 @@ footer {
         font-size: 12px;
     }
 }
+
 
 
 /* medium size  */
