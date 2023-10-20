@@ -9,7 +9,7 @@ body {
 }
 
 body {
-    font-family: 'Roboto', Arial, sans-serif;
+    font-family: Arial, sans-serif;
     text-align: center;
     font-size: 18px;
     display: flex;
@@ -470,7 +470,7 @@ footer {
 /* For smaller screens, adjust the heading font size and logo size */
 @media screen and (max-width: 600px) {
     .heading h1 {
-        font-size: 20px;
+        font-size: 24px;
     }
 
     #logo {
