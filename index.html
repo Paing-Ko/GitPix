@@ -52,6 +52,13 @@
     <footer role="contentinfo">
         <div class="giphy" aria-label="Giphy search section">
             <h2><span style="color: green;">Bonus:</span> Wanna GIF out loud? Go on!😁</h2>
+            <select id="sort-option" aria-label="Sort Option">
+                <option value="" disabled selected>Sort by</option>
+                <option value="relevant">Relevant</option>
+                <option value="popular">Popular</option>
+                <option value="recent">Recent</option>
+            </select>
+
             <input type="text" id="search-term" placeholder="Type anything" onkeydown="checkEnter(event)"
                 aria-label="Giphy search input field">
             <button id="searchBtn" onclick="searchGif()"

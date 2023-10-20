@@ -166,9 +166,10 @@ spans.forEach((span, index) => {
 });
 
 // GIPHY
-async function fetchGif(searchTerm) {
+async function fetchGif(searchTerm, sort) {
+  const sortParam = sort ? `&sort=${sort}` : "&sort=relevant"; // Default to 'relevant' if sort is empty
   const response = await fetch(
-    `https://api.giphy.com/v1/gifs/search?q=${searchTerm}&api_key=7zcr5tNW9JmYSO2awsqBqGK3OjpLjnh3&limit=10`
+    `https://api.giphy.com/v1/gifs/search?q=${searchTerm}${sortParam}&api_key=7zcr5tNW9JmYSO2awsqBqGK3OjpLjnh3&limit=10`
   );
   const data = await response.json();
   const randomIndex = Math.floor(Math.random() * data.data.length);
@@ -179,15 +180,20 @@ const modal = document.getElementById("giphyModal");
 const closeBtn = document.querySelector(".close");
 
 function searchGif() {
-  const searchTerm = document.getElementById("search-term").value.trim(); // .trim() removes whitespace from the start and end
+  const searchTerm = document.getElementById("search-term").value.trim();
+  const sortOption = document.getElementById("sort-option").value;
 
-  // Check if searchTerm is empty or not
   if (!searchTerm) {
     alert("Please enter a search term before searching.");
-    return; // Exit the function early
+    return;
   }
 
-  fetchGif(searchTerm).then((url) => {
+  if (!sortOption) {
+    alert("Please select a sort option before searching.");
+    return;
+  }
+
+  fetchGif(searchTerm, sortOption).then((url) => {
     const giphyImage = document.getElementById("giphy-image");
     giphyImage.src = url;
     giphyImage.style.display = "block"; /* Display the image element */
