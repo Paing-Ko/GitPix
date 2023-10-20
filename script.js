@@ -189,7 +189,7 @@ function searchGif() {
   }
 
   if (!sortOption) {
-    alert("Please select a sort option before searching.");
+    alert("Please select an option before searching.");
     return;
   }
 
