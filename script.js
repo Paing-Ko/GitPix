@@ -18,9 +18,10 @@ async function fetchRepos() {
       ),
     ]);
 
-    // Handling user not found
+    // Handle user not found
     if (profile.message && profile.message.includes("Not Found")) {
-      return alert("GitHub user not found.");
+      alert("GitHub user not found.");
+      return; // If user not found, return early
     }
 
     // Default values for null fields
@@ -28,14 +29,6 @@ async function fetchRepos() {
     profile.bio = profile.bio || "No bio available";
     profile.login = profile.login || "Unknown Username";
     profile.avatar_url = profile.avatar_url || ""; // replace with a default image URL if you prefer
-
-    const flickButton = document.getElementById("flickBtn");
-    flickButton.classList.add("flipped");
-
-    // Optional: Remove the flipped class after the animation completes to reset the effect
-    flickButton.addEventListener("animationend", () => {
-      flickButton.classList.remove("flipped");
-    });
 
     const repoContainer = document.getElementById("repoContainer");
     const totalStars = repos.reduce(
@@ -101,9 +94,13 @@ async function fetchRepos() {
     }
 
     displayImages(username);
+    // Start the spinning animation for the button
+    document.getElementById("flickBtn").classList.add("loading");
+
     await setBackground();
   } catch (error) {
     console.error("Network Error:", error);
+    document.getElementById("flickBtn").classList.remove("loading");
   }
 }
 
@@ -145,10 +142,18 @@ async function setBackground() {
   );
   const data = await response.json();
   const imageUrl = data.urls.full;
-  document.getElementById(
-    "profile-background"
-  ).style.cssText = `background-image: url(${imageUrl});
-`;
+
+  const img = new Image(); // Create a new Image object
+  img.src = imageUrl;
+
+  img.onload = () => {
+    // This function will run once the image has loaded
+    document.getElementById(
+      "profile-background"
+    ).style.cssText = `background-image: url(${imageUrl});`;
+    document.getElementById("profile-background").style.opacity = "1";
+    document.getElementById("flickBtn").classList.remove("loading");
+  };
 }
 
 // Rainbow

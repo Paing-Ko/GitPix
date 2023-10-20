@@ -49,7 +49,8 @@ header {
 }
 
 .heading h1 {
-    margin-right: 20px; /* Adjust value as needed */
+    margin-right: 20px;
+    /* Adjust value as needed */
 }
 
 
@@ -180,7 +181,7 @@ header {
     /* Darker shade for hover effect */
 }
 
-@keyframes flipAnimation {
+/* @keyframes flipAnimation {
     0% {
         transform: rotateY(0deg);
     }
@@ -192,12 +193,32 @@ header {
 
 #flickBtn.flipped {
     animation: flipAnimation 0.6s forwards;
+} */
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+#flickBtn.loading {
+    animation: spin 1s infinite linear;
+    transition: animation 0.5s ease-out;
+
+    /* Spin animation with 1s duration, infinite loop, and linear timing */
 }
 
 #profile-background {
     background-size: cover;
     background-position: center;
     padding: 20px;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+    /* Fade-in effect */
 }
 
 #profile-container {
