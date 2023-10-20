@@ -2,9 +2,10 @@
 
 Welcome to `GitPix`! A fun and interactive application that allows you to get a fresh perspective on GitHub users by mashing up data from Unsplash, GitHub, and GIPHY API.
 
-![GitPix App Screenshot](media/Screenshot%202023-10-20%20at%2010.29.50.png)
+<p align="center">
+  <img width="400" src="media/Screenshot%202023-10-20%20at%2010.29.50.png">
+</p>
 
-<!-- You can replace this with a real screenshot of your app -->
 
 🔗 [Try GitPix](https://paing-ko.github.io/GitPix/)
 
