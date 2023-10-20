@@ -1,0 +1,18 @@
+node_modules/
+*.log
+.DS_Store
+
+# Ignore all .tmp files
+*.tmp
+
+# Ignore the /dist/ directory
+/dist/
+
+# Ignore a specific config file
+config.secret.json
+
+
+
+
+
+

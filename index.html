@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GitPix</title>
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" type="image/x-icon" href="media/favicon.ico">
+
+
+</head>
+
+<body>
+    <header>
+        <section class="heading">
+            <div class="logo">
+                <img id="logo" src="media/octocat.png" alt="Logo">
+            </div>
+            <h1>Give your GitHub a <span
+                    class="rainbow"><span>s</span><span>p</span><span>l</span><span>a</span><span>s</span><span>h</span><span>y</span></span>
+                makeover! 🖌️🎨✨🌈</h1>
+        </section>
+
+    </header>
+
+    <main class="content-wrapper">
+        <!-- Input field for GitHub username -->
+        <div id="search-user">
+
+            <div class="flick">
+                <label for="username">Enter GitHub Username: </label>
+                <input type="text" id="username" name="username">
+                <button id="flickBtn" onclick="fetchRepos()">Flick</button>
+            </div>
+        </div>
+
+        <!-- Display the latest repositories -->
+        <div id="repoContainer"></div>
+
+        <!-- Display charts -->
+        <div class="charts">
+            <p><img id="user-stats" alt="User Stats chart" style="display: none;" /></p>
+            <p><img id="top-langs" alt="Top Languages chart" style="display: none;" /></p>
+            <p><img id="streak-stats" alt="Streak Stats chart" style="display: none;" /></p>
+            <p><img id="contribution-graph" alt="Contribution chart" style="display: none;" /></p>
+        </div>
+    </main>
+
+    <footer>
+        <div class="giphy">
+            <h2><span style="color: green;">Bonus:</span> Wanna GIF out loud? Go on!😆</h2>
+            <input type="text" id="search-term" placeholder="Type anything" onkeydown="checkEnter(event)">
+            <button id="searchBtn" onclick="searchGif()">Search</button>
+
+
+            <div id="giphyModal" class="modal">
+                <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <img id="giphy-image" src="" alt="Giphy GIF">
+                </div>
+            </div>
+
+
+
+        </div>
+
+        <p id="creators">Created by Paing Phyo Ko</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+
+</html>
