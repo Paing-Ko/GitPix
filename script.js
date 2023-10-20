@@ -112,15 +112,15 @@ function displayImages(username) {
   const images = [
     {
       id: "top-langs",
-      url: `https://github-readme-stats.vercel.app/api/top-langs?username=${username}&show_icons=true&locale=en&layout=compact`,
+      url: `https://github-readme-stats.vercel.app/api/top-langs?username=${username}&show_icons=true&theme=tokyonight&locale=en&layout=compact`,
     },
     {
       id: "user-stats",
-      url: `https://github-readme-stats.vercel.app/api?username=${username}&show_icons=true&locale=en`,
+      url: `https://github-readme-stats.vercel.app/api?username=${username}&show_icons=true&theme=tokyonight&locale=en`,
     },
     {
       id: "streak-stats",
-      url: `https://github-readme-streak-stats.herokuapp.com/?user=${username}`,
+      url: `https://github-readme-streak-stats.herokuapp.com/?user=${username}&theme=tokyonight`,
     },
     {
       id: "contribution-graph",
