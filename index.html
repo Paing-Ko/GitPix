@@ -17,11 +17,20 @@
             <div class="logo">
                 <img id="logo" src="media/octocat.png" alt="Logo">
             </div>
-            <h1>Give your GitHub a <span
-                    class="rainbow"><span>s</span><span>p</span><span>l</span><span>a</span><span>s</span><span>h</span><span>y</span></span>
-                makeover! 🖌️🎨✨🌈</h1>
+            <h1>Give your GitHub a
+                <span class="rainbow">
+                    <span>s</span>&nbsp;
+                    <span>p</span>&nbsp;
+                    <span>l</span>&nbsp;
+                    <span>a</span>&nbsp;
+                    <span>s</span>&nbsp;
+                    <span>h</span>&nbsp;
+                    <span>y</span>
+                </span> makeover! 🖌️🎨✨🌈
+            </h1>
         </section>
     </header>
+
 
     <main class="content-wrapper" role="main">
         <!-- Input field for GitHub username -->
@@ -35,10 +44,10 @@
         </div>
 
         <!-- Display the latest repositories -->
-        <div id="repoContainer" aria-label="Repository display section"></div>
+        <div id="repoContainer" role="list" aria-label="Repository display section"></div>
 
         <!-- Display charts -->
-        <div class="charts" aria-label="Charts display section">
+        <div class="charts" role="region" aria-label="Charts display section">
             <p><img id="user-stats" alt="User Stats chart" style="display: none;" /></p>
             <p><img id="top-langs" alt="Top Languages chart" style="display: none;" /></p>
             <p><img id="streak-stats" alt="Streak Stats chart" style="display: none;" /></p>
