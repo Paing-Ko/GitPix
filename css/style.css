@@ -359,7 +359,7 @@ header {
 #user-stats:hover,
 #streak-stats:hover,
 #contribution-graph:hover {
-    transform: scale(1.05);
+    transform: scale(1.1);
     /* enlarge a bit */
     transition: all 0.3s ease-in-out;
     /* smooth transition */
