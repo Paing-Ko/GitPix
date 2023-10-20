@@ -389,6 +389,9 @@ footer {
     background-color: black;
     color: white;
     text-align: center;
+    border-top: 1px solid #ccc;
+    /* Light border at the top */
+    box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.1);/
 }
 
 #searchBtn:hover {
@@ -405,7 +408,45 @@ footer {
 }
 
 .gifSearch {
-    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+    max-width: 400px;
+    /* Adds spacing between child elements */
+    margin: auto;
+    padding: 5px;
+    background-color: black;
+    border: 2px solid white;
+    /* Light gray background */
+    border-radius: 5px;
+    /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    /* Subtle shadow for depth */
+}
+
+.gifSearch select,
+.gifSearch input,
+.gifSearch button {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.gifSearch button {
+    background-color: #2f80ec;
+    ;
+    /* Stylish blue */
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+    /* Smooth color transition */
+}
+
+.gifSearch #searchBtn:hover {
+    background-color: #1a7cbe !important;
 }
 
 .modal {
@@ -420,6 +461,9 @@ footer {
     /* Add a semi-transparent background */
     z-index: 1000;
     /* Ensure modal is above other elements */
+    overflow: auto;
+    /* Adds scrollbar if content overflows */
+    max-height: 80vh;
 }
 
 .modal-content {
@@ -477,6 +521,20 @@ footer {
 
     #creators {
         font-size: 12px;
+    }
+
+    .gifSearch {
+        width: 50%;
+        flex-direction: column;
+        /* Stack elements vertically on small screens */
+        align-items: stretch;
+        /* Stretch elements to full width */
+    }
+
+    .gifSearch select,
+    .gifSearch input,
+    .gifSearch button {
+        max-width: 100%;
     }
 }
 
