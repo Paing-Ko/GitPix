@@ -8,12 +8,10 @@
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="icon" type="image/x-icon" href="media/favicon.ico">
-
-
 </head>
 
 <body>
-    <header>
+    <header role="banner">
         <section class="heading">
             <div class="logo">
                 <img id="logo" src="media/octocat.png" alt="Logo">
@@ -22,54 +20,49 @@
                     class="rainbow"><span>s</span><span>p</span><span>l</span><span>a</span><span>s</span><span>h</span><span>y</span></span>
                 makeover! 🖌️🎨✨🌈</h1>
         </section>
-
     </header>
 
-    <main class="content-wrapper">
+    <main class="content-wrapper" role="main">
         <!-- Input field for GitHub username -->
-        <div id="search-user">
-
+        <div id="search-user" aria-label="Search GitHub user section">
             <div class="flick">
                 <label for="username">Enter GitHub Username: </label>
-                <input type="text" id="username" name="username">
-                <button id="flickBtn" onclick="fetchRepos()">Flick</button>
+                <input type="text" id="username" name="username" aria-label="GitHub username input field">
+                <button id="flickBtn" onclick="fetchRepos()"
+                    aria-label="Flick button to fetch repositories">Flick</button>
             </div>
         </div>
 
         <!-- Display the latest repositories -->
-        <div id="repoContainer"></div>
+        <div id="repoContainer" aria-label="Repository display section"></div>
 
         <!-- Display charts -->
-        <!-- Display charts -->
-<div class="charts">
-    <p><img id="user-stats" alt="User Stats chart" style="display: none;" /></p>
-    <p><img id="top-langs" alt="Top Languages chart" style="display: none;" /></p>
-    <p><img id="streak-stats" alt="Streak Stats chart" style="display: none;" /></p>
-    <div class="chart-container">
-        <span id="chart-label" class="chart-label" style="display: none; color:#2f80ec; font-weight:bold">Contribution chart</span>
-        <img id="contribution-graph" alt="Contribution chart" style="display: none;" />
-    </div>
-
-</div>
-
+        <div class="charts" aria-label="Charts display section">
+            <p><img id="user-stats" alt="User Stats chart" style="display: none;" /></p>
+            <p><img id="top-langs" alt="Top Languages chart" style="display: none;" /></p>
+            <p><img id="streak-stats" alt="Streak Stats chart" style="display: none;" /></p>
+            <div class="chart-container">
+                <span id="chart-label" class="chart-label"
+                    style="display: none; color:#2f80ec; font-weight:bold">Contribution chart</span>
+                <img id="contribution-graph" alt="Contribution chart" style="display: none;" />
+            </div>
+        </div>
     </main>
 
-    <footer>
-        <div class="giphy">
+    <footer role="contentinfo">
+        <div class="giphy" aria-label="Giphy search section">
             <h2><span style="color: green;">Bonus:</span> Wanna GIF out loud? Go on!😁</h2>
-            <input type="text" id="search-term" placeholder="Type anything" onkeydown="checkEnter(event)">
-            <button id="searchBtn" onclick="searchGif()">Search</button>
+            <input type="text" id="search-term" placeholder="Type anything" onkeydown="checkEnter(event)"
+                aria-label="Giphy search input field">
+            <button id="searchBtn" onclick="searchGif()"
+                aria-label="Search button to fetch Giphy images">Search</button>
 
-
-            <div id="giphyModal" class="modal">
-                <div class="modal-content">
-                    <span class="close">&times;</span>
+            <div id="giphyModal" class="modal" aria-hidden="true" aria-labelledby="modal-content">
+                <div class="modal-content" id="modal-content">
+                    <span class="close" aria-label="Close modal window button">&times;</span>
                     <img id="giphy-image" src="" alt="Giphy GIF">
                 </div>
             </div>
-
-
-
         </div>
 
         <p id="creators">Created by Paing Phyo Ko</p>

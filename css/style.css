@@ -482,3 +482,15 @@ footer {
         /* Reducing the vertical margin */
     }
 }
+
+
+/* ARIA Accessibility Styles */
+:focus {
+    outline: 2px solid #2f80ec;
+    /* Adding outline to focusable elements */
+}
+
+[aria-hidden="true"] {
+    display: none;
+    /* Hiding elements from screen readers when aria-hidden is set to true */
+}
