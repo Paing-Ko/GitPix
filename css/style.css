@@ -31,44 +31,34 @@ img {
 }
 
 header {
-    display: block;
-    position: relative;
-    width: 100%;
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    align-items: center;
     padding: 15px;
-    /* Provide some spacing */
+    width: 100%;
+}
+
+.logo {
+    grid-column: 1 / 2;
 }
 
 .heading {
-    display: flex;
-    /* Using flex to align items horizontally */
-    align-items: center;
-    /* Vertically center items */
-    justify-content: center;
-    /* Horizontally center items */
-    gap: 5px;
-    /* Spacing between logo and title */
-}
-
-.heading h1 {
-    margin-right: 20px;
-    /* Adjust value as needed */
-}
-
-
-.logo {
-    position: relative;
-    /* no longer need absolute positioning */
-    flex-shrink: 0;
-    /* Ensure that logo doesn't shrink */
+    grid-column: 2 / 3;
+    text-align: center;
 }
 
 #logo {
     width: auto;
     height: 75px;
-    /* Set a height and let the width be auto-calculated */
     display: block;
-    /* To remove any spacing underneath the image */
 }
+
+.heading h1 {
+    margin: 0;
+    /* Reset margin to ensure centering */
+}
+
+
 
 
 
